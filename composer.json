@@ -1,0 +1,57 @@
+{
+    "name": "avisota/contao-css-to-inline-style",
+    "description": "Avisota newsletter replace css to inline styles",
+    "keywords": [
+        "avisota",
+        "email",
+        "mail",
+        "newsletter",
+        "marketing",
+        "css",
+        "inline",
+        "style"
+    ],
+    "type": "contao-module",
+    "homepage": "http://avisota.org",
+    "require": {
+        "php": ">=5.3",,
+        "contao/core": ">=2.11.11,<3.5",
+        "contao-community-alliance/composer-plugin": "~2.0",
+        "avisota/contao-core": "~2.0",
+        "avisota/contao-message": "~2.0",
+        "tijsverkoyen/css-to-inline-styles": "~1.0"
+    },
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Sven Baumann",
+            "email": "baumann.sv@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "baumann.sv@gmail.com",
+        "issues": "https://github.com/avisota/contao-css-to-inline-style/issues",
+        "forum": "https://community.contao.org/de/forumdisplay.php?121-Avisota",
+        "wiki": "http://de.contaowiki.org/Kategorie:Avisota",
+        "irc": "irc://irc.freenode.org/avisota",
+        "source": "https://github.com/avisota/contao-css-to-inline-style"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-0": {
+            "Avisota\\Message\\Render": "src/"
+        }
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "contao": "system/modules/avisota-css-to-inline-style"
+            }
+        },
+        "branch-alias": {
+            "dev-develop": "2.0.x-dev"
+        }
+    }
+}
