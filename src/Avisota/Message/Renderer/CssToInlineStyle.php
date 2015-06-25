@@ -13,7 +13,7 @@
  */
 
 
-namespace Avisota\Message\Render;
+namespace Avisota\Message\Renderer;
 
 use Avisota\Contao\Message\Core\Event\RenderMessageEvent;
 

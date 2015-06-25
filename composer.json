@@ -41,7 +41,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-0": {
-            "Avisota\\Message\\Render": "src/"
+            "Avisota\\Message\\Renderer": "src/"
         }
     },
     "extra": {

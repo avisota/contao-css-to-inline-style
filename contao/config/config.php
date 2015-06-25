@@ -18,6 +18,6 @@ $GLOBALS['AVISOTA']['ENABLE_CSS_TO_INLINE_STYLE'] = true;
 
 
 $GLOBALS['TL_EVENTS'][\Avisota\Contao\Message\Core\Event\AvisotaMessageEvents::RENDER_MESSAGE][] = array(
-    'Avisota\Message\Render\CssToInlineStyle',
-    'generate'
+    new Avisota\Message\Renderer\CssToInlineStyle(),
+    'renderMessage'
 );
