@@ -30,17 +30,12 @@ class CssToInlineStyle
      */
     public function renderMessage(RenderMessageEvent $event)
     {
-        if ($this->parseViewMode()) {
-            if ($GLOBALS['AVISOTA']['ENABLE_CSS_TO_INLINE_STYLE']) {
-                //TODO add the methoic to set the css rules as inline styles
-            }
-        };
-    }
-
-    protected function parseViewMode() {
-        //TODO check if we send the email or we are on preview then return true
-        // if we are in frontend view the return false
-
-        return true;
+        if ($GLOBALS['AVISOTA']['ENABLE_CSS_TO_INLINE_STYLE']) {
+            //TODO add the methoic to set the css rules as inline styles
+            $newEvent = $event->getPreRenderedMessageTemplate();
+            $content = $newEvent->getContaoMessage();
+            $event->setPreRenderedMessageTemplate($newEvent);
+            return;
+        }
     }
 }
