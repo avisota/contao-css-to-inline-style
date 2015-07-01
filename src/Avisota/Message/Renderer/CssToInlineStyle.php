@@ -32,9 +32,9 @@ class CssToInlineStyle
     {
         if ($GLOBALS['AVISOTA']['ENABLE_CSS_TO_INLINE_STYLE']) {
             //TODO add the methoic to set the css rules as inline styles
-            $newEvent = $event->getPreRenderedMessageTemplate();
-            $content = $newEvent->getContaoMessage();
-            $event->setPreRenderedMessageTemplate($newEvent);
+            $content = $event->getPreRenderedMessageTemplate()->getContent();
+            $content .= '<!-- ich bin neu -->';
+            $event->getPreRenderedMessageTemplate()->setContent($content);
             return;
         }
     }
