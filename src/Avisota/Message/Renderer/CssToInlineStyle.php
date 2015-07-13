@@ -18,8 +18,6 @@ namespace Avisota\Message\Renderer;
 use Avisota\Contao\Core\Message\PreRenderedMessageTemplateInterface;
 use Avisota\Contao\Message\Core\Event\RenderMessageEvent;
 
-
-
 class CssToInlineStyle
 {
 
@@ -35,14 +33,7 @@ class CssToInlineStyle
         if ($GLOBALS['AVISOTA']['ENABLE_CSS_TO_INLINE_STYLE']) {
             //TODO add the methoic to set the css rules as inline styles
             $content = $event->getPreRenderedMessageTemplate()->getContent();
-            $arrXchange = array(
-                '<h1>' => '<h1 style="margin-top:.4em;margin-bottom:.4em;text-align:left;font:17px Arial,Verdana,sans-serif;font-weight:bold;text-transform:uppercase">',
-                'class="mce_text">' => 'class="mce_text" style="border-bottom:9px solid #000;padding-bottom:11px;">',
-            );
-            foreach ($arrXchange as $find => $replace) {
-                $content = str_replace($find, $replace, $content);
-            }
-
+            $content .= '<!-- ich bin neu -->';
             $event->getPreRenderedMessageTemplate()->setContent($content);
             return;
         }
