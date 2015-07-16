@@ -8,6 +8,7 @@
  * @package   contao-css-to-inline-style
  * @file      CssToInlineStyle.php
  * @author    Sven Baumann <baumann.sv@gmail.com>
+ * @author    Oliver Willmes <info@oliverwillmes.de>
  * @license   LGPL-3.0+
  * @copyright Copyright 2015 Avisota
  */
