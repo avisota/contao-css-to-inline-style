@@ -15,7 +15,7 @@
     "homepage": "http://avisota.org",
     "require": {
         "php": ">=5.3",
-        "contao/core": ">=2.11.11,<3.5",
+        "contao/core": ">=2.11.11,<3.6",
         "contao-community-alliance/composer-plugin": "~2.0",
         "avisota/contao-core": "~2.0",
         "avisota/contao-message": "~2.0",
