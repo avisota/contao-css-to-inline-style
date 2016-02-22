@@ -35,8 +35,10 @@ class CssToInlineStyle
      */
     public function renderMessage(RenderMessageEvent $event)
     {
-        if ($GLOBALS['AVISOTA']['ENABLE_CSS_TO_INLINE_STYLE']) {
-            //TODO add the methoic to set the css rules as inline styles
+        if (!$event->getLayout()->getCssToInline()) {
+            return;
+        }
+
             $content                 = $event->getPreRenderedMessageTemplate()->getContent();
             $libxmlUseInternalErrors = libxml_use_internal_errors(true);
             $document                = new \DOMDocument('1.0', 'UTF-8');
@@ -77,6 +79,5 @@ class CssToInlineStyle
             $event->getPreRenderedMessageTemplate()->setContent($content);
             libxml_use_internal_errors($libxmlUseInternalErrors);
             return;
-        }
     }
 }
