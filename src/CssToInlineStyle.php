@@ -32,6 +32,7 @@ class CssToInlineStyle
      * @param RenderMessageEvent $event
      *
      * @return PreRenderedMessageTemplateInterface
+     * @SuppressWarnings(PHPMD.LongVariable)
      */
     public function renderMessage(RenderMessageEvent $event)
     {
