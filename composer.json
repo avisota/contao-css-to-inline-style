@@ -41,7 +41,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Avisota\\Contao\\Message\\Renderer": "src/"
+            "Avisota\\Contao\\Message\\Renderer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Avisota\\Test\\Contao\\Message\\Renderer\\": "tests/Test/"
         }
     },
     "extra": {
