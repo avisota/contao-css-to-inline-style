@@ -11,7 +11,3 @@
  * @license   LGPL-3.0+
  * @copyright Copyright 2016 Avisota
  */
-
-
-//TODO enable this in avisota
-$GLOBALS['AVISOTA']['ENABLE_CSS_TO_INLINE_STYLE'] = true;
