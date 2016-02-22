@@ -40,7 +40,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Avisota\\Message\\Renderer": "src/"
         }
     },
