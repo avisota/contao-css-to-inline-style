@@ -14,7 +14,7 @@
  */
 
 
-namespace Avisota\Message\Renderer;
+namespace Avisota\Contao\Message\Renderer;
 
 use Avisota\Contao\Core\Message\PreRenderedMessageTemplateInterface;
 use Avisota\Contao\Message\Core\Event\RenderMessageEvent;
