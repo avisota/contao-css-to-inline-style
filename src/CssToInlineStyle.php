@@ -18,6 +18,7 @@ namespace Avisota\Contao\Message\Renderer;
 
 use Avisota\Contao\Core\Message\PreRenderedMessageTemplateInterface;
 use Avisota\Contao\Message\Core\Event\RenderMessageEvent;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
 class CssToInlineStyle
 {
@@ -48,7 +49,7 @@ class CssToInlineStyle
                 }
             }
             $content     = $document->saveHTML();
-            $htmlInStyle = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles($content, $inlineStyle->textContent);
+            $htmlInStyle = new CssToInlineStyles($content, $inlineStyle->textContent);
             $content     = $htmlInStyle->convert();
 
             $content = str_replace(
