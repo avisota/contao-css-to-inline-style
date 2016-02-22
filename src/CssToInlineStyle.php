@@ -20,6 +20,11 @@ use Avisota\Contao\Core\Message\PreRenderedMessageTemplateInterface;
 use Avisota\Contao\Message\Core\Event\RenderMessageEvent;
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
+/**
+ * Class CssToInlineStyle
+ *
+ * @package Avisota\Contao\Message\Renderer
+ */
 class CssToInlineStyle
 {
 
