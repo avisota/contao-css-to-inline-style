@@ -10,7 +10,7 @@
  * @author    Sven Baumann <baumann.sv@gmail.com>
  * @author    Oliver Willmes <info@oliverwillmes.de>
  * @license   LGPL-3.0+
- * @copyright Copyright 2015 Avisota
+ * @copyright Copyright 2016 Avisota
  */
 
 
