@@ -21,6 +21,9 @@
         "avisota/contao-message": "3.0.x-dev",
         "tijsverkoyen/css-to-inline-styles": "~1.5"
     },
+    "require-dev": {
+        "phpcq/all-tasks": "~1.1"
+    },
     "license": "LGPL-3.0+",
     "authors": [
         {
