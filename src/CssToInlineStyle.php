@@ -13,7 +13,6 @@
  * @copyright Copyright 2016 Avisota
  */
 
-
 namespace Avisota\Contao\Message\Renderer;
 
 use Avisota\Contao\Core\Message\PreRenderedMessageTemplateInterface;
@@ -27,7 +26,6 @@ use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
  */
 class CssToInlineStyle
 {
-
     /**
      * Render add the css rules as inline styles.
      *
