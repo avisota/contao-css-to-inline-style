@@ -12,6 +12,8 @@
  * @copyright Copyright 2016 Avisota
  */
 
-
-//TODO enable this in avisota
-$GLOBALS['AVISOTA']['ENABLE_CSS_TO_INLINE_STYLE'] = true;
+return array(
+    Avisota\Contao\Message\Core\Event\AvisotaMessageEvents::RENDER_MESSAGE => array(
+        array(new Avisota\Contao\Message\Renderer\CssToInlineStyle(), 'renderMessage')
+    ),
+);
