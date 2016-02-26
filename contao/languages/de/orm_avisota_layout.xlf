@@ -2,13 +2,13 @@
   <file datatype="php" date="2014-05-06T04:00:38+02:00" original="orm_avisota_layout" source-language="en" target-language="de">
     <body>
       <trans-unit id="orm_avisota_layout.cssToInline.0">
-        <target>Inline Styles</target>
         <source>Inline styles</source>
+        <target>Inline Styles</target>
 
       </trans-unit>
       <trans-unit id="orm_avisota_layout.cssToInline.1">
-        <target>Wenn aktiviert, werden die Styles in Inline Styles konvertiert</target>
         <source>If this chose. Then convert Avisota all styles as inline styles. </source>
+        <target>Wenn aktiviert, werden die Styles in Inline Styles konvertiert.</target>
 
       </trans-unit>
     </body>
