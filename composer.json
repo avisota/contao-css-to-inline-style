@@ -14,12 +14,12 @@
     "type": "contao-module",
     "homepage": "http://avisota.org",
     "require": {
-        "php": ">=5.3",
-        "contao/core": ">=2.11.11,<3.6",
-        "contao-community-alliance/composer-plugin": "~2.0",
-        "avisota/contao-core": "~2.0",
-        "avisota/contao-message": "~2.0",
-        "tijsverkoyen/css-to-inline-styles": "~1.0"
+        "php": ">=5.4",
+        "contao/core": ">=3.5,<3.6",
+        "contao-community-alliance/composer-plugin": "~2.4",
+        "avisota/contao-core": "3.0.x-dev",
+        "avisota/contao-message": "3.0.x-dev",
+        "tijsverkoyen/css-to-inline-styles": "~1.5"
     },
     "license": "LGPL-3.0+",
     "authors": [
@@ -30,7 +30,7 @@
         }
     ],
     "support": {
-        "email": "baumann.sv@gmail.com",
+        "email": "support@avisota.org",
         "issues": "https://github.com/avisota/contao-css-to-inline-style/issues",
         "forum": "https://community.contao.org/de/forumdisplay.php?121-Avisota",
         "wiki": "http://de.contaowiki.org/Kategorie:Avisota",
@@ -40,8 +40,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
-        "psr-0": {
-            "Avisota\\Message\\Renderer": "src/"
+        "psr-4": {
+            "Avisota\\Contao\\Message\\Renderer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Avisota\\Test\\Contao\\Message\\Renderer\\": "tests/Test/"
         }
     },
     "extra": {
@@ -51,7 +56,7 @@
             }
         },
         "branch-alias": {
-            "dev-develop": "2.0.x-dev"
+            "dev-develop": "3.0.x-dev"
         }
     }
 }

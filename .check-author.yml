@@ -1,0 +1,5 @@
+exclude:
+  languages
+
+ignore:
+  - Oliver Willmes <info@oliverwillmes.de>

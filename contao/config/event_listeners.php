@@ -11,3 +11,9 @@
  * @license   LGPL-3.0+
  * @copyright Copyright 2016 Avisota
  */
+
+return array(
+    Avisota\Contao\Message\Core\Event\AvisotaMessageEvents::RENDER_MESSAGE => array(
+        array(new Avisota\Contao\Message\Renderer\CssToInlineStyle(), 'renderMessage')
+    ),
+);

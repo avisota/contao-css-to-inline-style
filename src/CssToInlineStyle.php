@@ -10,18 +10,22 @@
  * @author    Sven Baumann <baumann.sv@gmail.com>
  * @author    Oliver Willmes <info@oliverwillmes.de>
  * @license   LGPL-3.0+
- * @copyright Copyright 2015 Avisota
+ * @copyright Copyright 2016 Avisota
  */
 
-
-namespace Avisota\Message\Renderer;
+namespace Avisota\Contao\Message\Renderer;
 
 use Avisota\Contao\Core\Message\PreRenderedMessageTemplateInterface;
 use Avisota\Contao\Message\Core\Event\RenderMessageEvent;
+use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
+/**
+ * Class CssToInlineStyle
+ *
+ * @package Avisota\Contao\Message\Renderer
+ */
 class CssToInlineStyle
 {
-
     /**
      * Render add the css rules as inline styles.
      *
@@ -48,7 +52,7 @@ class CssToInlineStyle
                 }
             }
             $content     = $document->saveHTML();
-            $htmlInStyle = new \TijsVerkoyen\CssToInlineStyles\CssToInlineStyles($content, $inlineStyle->textContent);
+            $htmlInStyle = new CssToInlineStyles($content, $inlineStyle->textContent);
             $content     = $htmlInStyle->convert();
 
             $content = str_replace(

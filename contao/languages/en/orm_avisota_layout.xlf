@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-05-06T04:00:38+02:00" original="orm_avisota_layout" source-language="en" target-language="en">
+    <body>
+      <trans-unit id="orm_avisota_layout.cssToInline.0">
+        <source>Inline styles</source>
+
+      </trans-unit>
+      <trans-unit id="orm_avisota_layout.cssToInline.1">
+        <source>If this chose. Then convert Avisota all styles as inline styles. </source>
+
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
