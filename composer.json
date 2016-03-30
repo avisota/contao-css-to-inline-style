@@ -1,7 +1,6 @@
 {
     "name": "avisota/contao-css-to-inline-style",
     "description": "Avisota newsletter replace css to inline styles",
-    "version": "3.1.x-dev",
     "keywords": [
         "avisota",
         "email",
@@ -18,8 +17,7 @@
         "php": ">=5.4",
         "contao/core": ">=3.5,<3.6",
         "contao-community-alliance/composer-plugin": "~2.4",
-        "avisota/contao-core": "3.1.x-dev",
-        "avisota/contao-message": "3.2.x-dev",
+        "avisota/contao-core": "~3.1",
         "tijsverkoyen/css-to-inline-styles": "~1.5"
     },
     "require-dev": {
@@ -60,8 +58,7 @@
             }
         },
         "branch-alias": {
-            "dev-develop": "3.0.x-dev",
-            "dev-release/3.1.0": "3.1.x-dev"
+            "dev-develop": "3.1.x-dev"
         }
     }
 }
