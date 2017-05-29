@@ -10,7 +10,7 @@
  * @author    Sven Baumann <baumann.sv@gmail.com>
  * @author    Oliver Willmes <info@oliverwillmes.de>
  * @license   LGPL-3.0+
- * @copyright Copyright 2016 Avisota
+ * @copyright Copyright 2017 Avisota
  */
 
 namespace Avisota\Contao\Message\Renderer;
@@ -55,8 +55,8 @@ class CssToInlineStyle
             }
         }
         $content     = $document->saveHTML();
-        $htmlInStyle = new CssToInlineStyles($content, $inlineStyle->textContent);
-        $content     = $htmlInStyle->convert();
+        $htmlInStyle = new CssToInlineStyles();
+        $content     = $htmlInStyle->convert($content, $inlineStyle->textContent);
 
         $content = str_replace(
             array('%5B', '%5D', '%7B', '%7D', '%20'),
@@ -79,6 +79,5 @@ class CssToInlineStyle
         );
         $event->getPreRenderedMessageTemplate()->setContent($content);
         libxml_use_internal_errors($libxmlUseInternalErrors);
-        return;
     }
 }
