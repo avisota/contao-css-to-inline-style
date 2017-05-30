@@ -15,7 +15,6 @@
 
 namespace Avisota\Contao\Message\Renderer;
 
-use Avisota\Contao\Core\Message\PreRenderedMessageTemplateInterface;
 use Avisota\Contao\Message\Core\Event\RenderMessageEvent;
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 
@@ -31,8 +30,7 @@ class CssToInlineStyle
      *
      * @param RenderMessageEvent $event
      *
-     * @return PreRenderedMessageTemplateInterface
-     * @SuppressWarnings(PHPMD.LongVariable)
+     * @return void
      */
     public function renderMessage(RenderMessageEvent $event)
     {
@@ -40,29 +38,41 @@ class CssToInlineStyle
             return;
         }
 
-        $content                 = $event->getPreRenderedMessageTemplate()->getContent();
-        $libxmlUseInternalErrors = libxml_use_internal_errors(true);
-        $document                = new \DOMDocument('1.0', 'UTF-8');
-        $document->formatOutput  = true;
-        $document->loadHTML($content);
-        $xpath  = new \DOMXPath($document);
-        $styles = $xpath->query('/html/head/style');
-        for ($i = 0; $i < $styles->length; $i++) {
-            if ($i <> 0) {
-                $style       = $styles->item($i);
-                $inlineStyle = $style;
-                $style->parentNode->removeChild($style);
-            }
-        }
-        $content     = $document->saveHTML();
-        $htmlInStyle = new CssToInlineStyles();
-        $content     = $htmlInStyle->convert($content, $inlineStyle->textContent);
+        $content = $event->getPreRenderedMessageTemplate()->getContent();
 
-        $content = str_replace(
-            array('%5B', '%5D', '%7B', '%7D', '%20'),
-            array('[', ']', '{', '}', ' '),
-            $content
-        );
+        $cssInStyle = new CssToInlineStyles();
+
+        $content = $cssInStyle->convert($content);
+        $content = $this->decodeContent($content);
+
+        $event->getPreRenderedMessageTemplate()->setContent($content);
+    }
+
+    /**
+     * The content to decode.
+     *
+     * @param string $content The content.
+     *
+     * @return string
+     */
+    private function decodeContent($content)
+    {
+        $content = $this->decodeTwigShortcuts($content);
+        $content = $this->decodeAllSimpleTokens($content);
+        $content = $this->decodeUrl($content);
+
+        return $content;
+    }
+
+    /**
+     * Decode html entity in twig shortcuts.
+     *
+     * @param string $content The content.
+     *
+     * @return string
+     */
+    private function decodeTwigShortcuts($content = '')
+    {
         $content = preg_replace_callback(
             '~\{%.*%\}~U',
             function ($matches) {
@@ -70,6 +80,19 @@ class CssToInlineStyle
             },
             $content
         );
+
+        return $content;
+    }
+
+    /**
+     * Decode html entity in twig shortcuts.
+     *
+     * @param string $content The content.
+     *
+     * @return string
+     */
+    private function decodeAllSimpleTokens($content = '')
+    {
         $content = preg_replace_callback(
             '~##.*##~U',
             function ($matches) {
@@ -77,7 +100,19 @@ class CssToInlineStyle
             },
             $content
         );
-        $event->getPreRenderedMessageTemplate()->setContent($content);
-        libxml_use_internal_errors($libxmlUseInternalErrors);
+
+        return $content;
+    }
+
+    /**
+     * Decode url characters.
+     *
+     * @param string $content The content.
+     *
+     * @return string
+     */
+    private function decodeUrl($content = '')
+    {
+        return urldecode($content);
     }
 }
