@@ -14,6 +14,6 @@
 
 return array(
     Avisota\Contao\Message\Core\Event\AvisotaMessageEvents::RENDER_MESSAGE => array(
-        array(new Avisota\Contao\Message\Renderer\CssToInlineStyle(), 'renderMessage')
+        array(new Avisota\Contao\Message\Renderer\CssToInlineStyle(), 'renderMessage', 9999)
     ),
 );
