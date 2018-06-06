@@ -41,8 +41,6 @@
         "irc": "irc://irc.freenode.org/avisota",
         "source": "https://github.com/avisota/contao-css-to-inline-style"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Avisota\\Contao\\Message\\Renderer\\": "src/"
